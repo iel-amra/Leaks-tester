@@ -1,0 +1,5 @@
+-1 5 9 10 100
+gcc -fsanitize=address *[^u]?.c -D BUFFER_SIZE=42
+a.out test.txt
+gcc *[^u]?.c -D BUFFER_SIZE=42
+leaks -atExit -- a.out test.txt
